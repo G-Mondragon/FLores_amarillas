@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores Amarillas</title>
+    <style>
+        /* Reset de márgenes y padding, full responsive */
+        body, html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f9f9f9;
+        }
+
+        /* Contenedor general */
+        div {
+            text-align: center;
+            position: relative;
+            z-index: 2; /* para que el contenido esté encima de la imagen */
+        }
+
+        /* Imagen de fondo que no cubre todo */
+        body {
+            background-image: url('img/space.jpg'); /* Reemplaza con la URL de tu imagen */
+            background-size: 90%; /* Ocupa el 50% de la pantalla */
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+
+        /* Encabezados con nueva animación */
+        h1, h2{
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transform: translateY(30px) scale(0.9) rotate(10deg); /* Posición inicial */
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        h1 {
+            font-size: 6vw;
+            animation-delay: 0.3s; /* Delay para que no aparezca al mismo tiempo que h2 */
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            animation-delay: 0.6s; /* Aparece un poco después de h1 */
+        }
+
+        /* Botón centrado con animación */
+        button {
+            font-size: 2vw; /* Tamaño reducido del botón */
+            padding: 10px 20px;
+            margin-top: 30px;
+            border: none;
+            background-color: #ff3366;
+            color: white;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efecto hover en el botón */
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Nueva animación para letras */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9) rotate(10deg); /* Inicio: fuera de pantalla, más pequeño y rotado */
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(10px) scale(1.05) rotate(0); /* Mitad: casi en su posición final pero aún no */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(0); /* Fin: en su lugar, sin rotación y tamaño normal */
+            }
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 8vw;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            button {
+                font-size: 4vw;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>HOLIWIS (●'◡'●) 🌻</h1>
+        <h2>Por si aun no te dan tus flores Amarillas, aquí te tengo un regalo 👇</h2>
+        <button onclick="window.location.href='rosas.html'">Ver regalo 👉🌻</button>
+    </div>
+</body>
+</html>
